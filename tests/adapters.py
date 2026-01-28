@@ -8,6 +8,7 @@ import numpy.typing as npt
 import torch
 from jaxtyping import Bool, Float, Int
 from torch import Tensor
+from cs336_basics.layers.tokenizer import tokenizer
 from cs336_basics.layers.train_bpe import train_bpe
 
 
@@ -562,7 +563,8 @@ def get_tokenizer(
     Returns:
         A BPE tokenizer that uses the provided vocab, merges, and special tokens.
     """
-    raise NotImplementedError
+    #利用tokenizer类的构造函数来创建分词器实例
+    return tokenizer(vocab, merges, special_tokens)
 
 
 def run_train_bpe(
